@@ -1,0 +1,6 @@
+@import 'mixins/includeFont';
+
+@include includeFont('Gilroy', 'Light');
+@include includeFont('Gilroy', 'Regular');
+@include includeFont('Gilroy', 'Medium');
+@include includeFont('Gilroy', 'Bold');

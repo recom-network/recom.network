@@ -1,0 +1,104 @@
+.content__accordion-coin {
+  width: 100%;
+  background-color: $secondaryColor;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0 15px 0;
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .content__accordion-coin__info {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      img {
+        width: 40px;
+        height: 40px;
+        margin: 0 10px 0 0;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 32px;
+
+        a:first-child {
+          text-decoration: underline;
+        }
+
+        a:first-child, span:first-child {
+          font: $defaultContentFont;
+          color: #FFF;
+        }
+
+        span:last-child {
+          font: $hintFont;
+          color: $hint;
+        }
+      }
+    }
+
+    .content__accordion-coin__controller {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #FFF;
+      border-radius: 10px;
+      cursor: pointer;
+
+      img {
+        width: 20px;
+        transition: transform .3s ease;
+      }
+
+      img.opened {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .content__accordion-coin__content, .content__accordion-coin__content-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px 0 0 0;
+
+    .content__accordion-coin__content__wallet-info {
+      font: $defaultContentFont;
+      color: #FFF;
+      margin: 0 0 10px 0;
+    }
+
+    .content__accordion-coin__content__transaction {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      input {
+        width: 49%;
+      }
+    }
+  }
+
+  .content__accordion-coin__content-row {
+    flex-direction: row;
+    justify-content: space-between;
+
+    input {
+      width: 32%;
+    }
+  }
+}

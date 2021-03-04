@@ -1,0 +1,6 @@
+node_modules*
+.idea*
+hidden*
+package-lock.json
+dist*
+__update_with_comment.bat

@@ -1,0 +1,106 @@
+menu {
+  width: 100%;
+  height: 90px;
+  background-color: $secondaryColor;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .menu__controller {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    right: 15px;
+    display: none;
+  }
+
+  section.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  section.logo img {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+  }
+
+  section.logo span {
+    font: $logoFont;
+    color: #fff;
+  }
+
+  section.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    a {
+      padding: 0 10px;
+      height: 50px;
+      line-height: 50px;
+      margin: 0 5px 0 0;
+    }
+
+    a:hover {
+      border-bottom: 1px solid $thirdColor;
+    }
+
+    a.active {
+      border-bottom: 1px solid $thirdColor;
+    }
+
+    a span {
+      text-transform: uppercase;
+      font: $menuFont;
+    }
+
+    .wallet-controller {
+      width: 150px;
+      border: 1px solid #FFF;
+      border-radius: 50px;
+      padding: 7px 14px;
+      color: #FFF;
+      cursor: pointer;
+      margin: 0 10px 0 10px;
+      text-align: center;
+      font: $defaultContentFont;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      .wallet-controller__indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: $walletConnected;
+        float: left;
+      }
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  menu {
+    .menu__controller {
+      display: flex;
+      pointer-events: initial;
+    }
+
+    section.navigation {
+      display: none;
+      flex-direction: column-reverse;
+      position: absolute;
+      top: 90px;
+      z-index: 1000;
+      width: 100%;
+      height: calc(100vh - 90px);
+      background-color: $primaryColor;
+    }
+  }
+}

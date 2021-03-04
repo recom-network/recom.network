@@ -1,0 +1,11 @@
+@mixin includeFont($fontName, $fontWeight) {
+  @font-face {
+    font-family: '#{$fontName} #{$fontWeight}';
+    src:
+      url('@assets/fonts/#{$fontName}/#{$fontWeight}/font.ttf') format('truetype'),
+      url('@assets/fonts/#{$fontName}/#{$fontWeight}/font.woff') format('woff'),
+      url('@assets/fonts/#{$fontName}/#{$fontWeight}/font.woff2') format('woff2'),
+      url('@assets/fonts/#{$fontName}/#{$fontWeight}/font.svg') format('svg'),
+      url('@assets/fonts/#{$fontName}/#{$fontWeight}/font.eot') format('embedded-opentype');
+  }
+}

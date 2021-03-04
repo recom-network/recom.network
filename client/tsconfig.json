@@ -1,0 +1,40 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"noImplicitAny": true,
+		"module": "esnext",
+		"sourceMap": true,
+		"outDir": "../dist/client",
+		"baseUrl": "./src",   
+		"removeComments": true,
+		"esModuleInterop": true,
+		"jsx": "react",
+		"allowJs": true,
+		"declaration": true,
+		"moduleResolution": "node",
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"paths": {
+			"@/*": ["./*"],
+			"@styles/*": ["./scss/*"],
+			"@assets/*": ["./assets/*"],
+			"@components/*": ["./components/*"],
+			"@interfaces/*": ["./interfaces/*"],
+			"@pages/*": ["./pages/*"],
+			"@routes/*": ["./routes/*"],
+			"@storage/*": ["./store/*"],
+			"@hooks/*": ["./hooks/*"],
+			"@utils/*": ["./utils/*"]
+		},
+		"lib": [
+			"esnext",
+			"dom"
+		]
+	},
+	"include": [
+		"src"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

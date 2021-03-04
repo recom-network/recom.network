@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  list-style: none;
+  border: 0;
+  box-sizing: border-box;
+  color: #FFF;
+}
+
+body {
+  background-color: $primaryColor;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: #FFF;
+  cursor: pointer !important;
+}
+
+h3 {
+  font: $titleMainNavbarFont;
+}
+
+h4 {
+  font: $descriptionMainNavbarFont;
+}
+
+img {
+  pointer-events: none;
+  user-select: none;
+}
+
+input[type='text'], input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: $inputBackground;
+  border-radius: 10px;
+  font: $defaultContentFontMedium;
+}
+
+input[type="submit"] {
+  color: $thirdColor;
+  text-transform: uppercase;
+}
+
+input[type="submit"] {
+  width: 100%;
+  border-radius: 10px;
+  background-color: $inputBackground;
+  cursor: pointer;
+}
+
+main {
+  .back-to-homepage__btn {
+    width: 200px;
+    position: absolute;
+    top: 10px;
+    left: calc(50% - 200px / 2);
+    display: block;
+    padding: 10px;
+    border: 1px solid #FFF;
+    font: $defaultContentFont;
+    border-radius: 25px;
+    text-align: center;
+  }
+
+  .back-to-homepage__btn:hover {
+    background-color: #FFF;
+    color: $primaryColor;
+
+    span {
+      color: $primaryColor;
+    }
+  }
+}
+
+.content {
+  max-width: 1150px;
+  width: 100%;
+  padding: 15px;
+}
