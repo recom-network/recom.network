@@ -1,6 +1,9 @@
 const path = require('path');
 
-const LOCAL_IP_MACHINE = require('os').networkInterfaces()?.Ethernet[1]?.address || 'localhost';
+let LOCAL_IP_MACHINE = 'localhost';
+try {
+    LOCAL_IP_MACHINE = require('os').networkInterfaces().Ethernet[1].address;
+} catch (e) {}
 
 const ROOT_DIR = path.resolve(__dirname, 'src');
 const DIST_DIR = path.resolve(__dirname, '..', 'dist', 'client');
