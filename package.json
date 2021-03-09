@@ -1,10 +1,11 @@
 {
   "name": "recom.network",
-  "version": "1.0.0",
+  "version": "0.0.11",
   "description": "",
   "scripts": {
     "start": "npm run pi && npm run build:client && npm run build:clean && cross-env NODE_ENV=production node dist/app.js",
     "pi": "npm i && cd client && npm i",
+    "dev": "concurrently --kill-others \"npm run dev:server\" \"cd client && npm run dev:client\"",
     "dev:server": "cross-env NODE_ENV=development ts-node ./src/app.ts",
     "build:clean": "tsc --build --clean && tsc --build",
     "build:client": "cd client && npm run build"

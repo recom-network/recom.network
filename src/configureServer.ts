@@ -9,9 +9,11 @@ app.listen(80);
 
 const server = require('https').createServer(serverOptions, app);
 
-app.use((req, res, next) => {
-    (req.secure) ? next() : res.redirect(`https://${req.headers.host}/${req.url}`);
-});
+if(process.env.NODE_ENV === 'production') {
+    app.use((req, res, next) => {
+        (req.secure) ? next() : res.redirect(`https://${req.headers.host}/${req.url}`);
+    });
+}
 
 app.use(cors());
 app.use(express.json({ extended: true }));

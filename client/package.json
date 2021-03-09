@@ -1,10 +1,10 @@
 {
   "name": "recom",
-  "version": "1.0.0",
+  "version": "0.0.11",
   "description": "recom.network",
   "private": true,
   "scripts": {
-    "dev:live": "cross-env NODE_ENV=development webpack serve --mode development --open",
+    "dev:client": "cross-env NODE_ENV=development webpack serve --mode development --open",
     "build": "cross-env NODE_ENV=production webpack --mode production"
   },
   "keywords": [

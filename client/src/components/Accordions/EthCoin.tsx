@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ethers, utils } from 'ethers';
-import { initEthereumAndEthers } from '@utils/metamask';
+import { WalletControllerInstance } from '@utils/WalletController';
 
 export const EthCoinAccordion: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +27,7 @@ export const EthCoinAccordion: React.FC = () => {
                 (isOpen) &&
                 <section className='content__accordion-coin__content-row'>
                     <input type="submit" value='8 ETH' onClick={async () => {
-                        const { provider } = initEthereumAndEthers();
+                        const provider = WalletControllerInstance.provider;
                         const transactionHash = await provider.send('eth_sendTransaction', [{
                             from: '0xA61CC155221C3f8725aBB64D9b4e62FC9C477372',
                             to: '0x8DF58dC6982c009216973D15E22654537297C152',
@@ -35,7 +35,7 @@ export const EthCoinAccordion: React.FC = () => {
                         }]);
                     }} />
                     <input type="submit" value='16 ETH' onClick={async () => {
-                        const { provider } = initEthereumAndEthers();
+                        const provider = WalletControllerInstance.provider;
                         const transactionHash = await provider.send('eth_sendTransaction', [{
                             from: '0xA61CC155221C3f8725aBB64D9b4e62FC9C477372',
                             to: '0x8DF58dC6982c009216973D15E22654537297C152',
@@ -43,7 +43,7 @@ export const EthCoinAccordion: React.FC = () => {
                         }]);
                     }} />
                     <input type="submit" value='32 ETH' onClick={async () => {
-                        const { provider } = initEthereumAndEthers();
+                        const provider = WalletControllerInstance.provider;
                         const transactionHash = await provider.send('eth_sendTransaction', [{
                             from: '0xA61CC155221C3f8725aBB64D9b4e62FC9C477372',
                             to: '0x8DF58dC6982c009216973D15E22654537297C152',

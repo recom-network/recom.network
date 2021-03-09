@@ -10,7 +10,8 @@ const {
         ROUTES_DIR,
         STORAGE_DIR,
         REACT_HOOKS_DIR,
-        UTILS_DIR
+        UTILS_DIR,
+        LOCAL_IP_MACHINE
     },
     methods: {
         defineMode,
@@ -22,7 +23,8 @@ const {
         babelOptions
     }
 } = require('./webpackUtils');
-
+const fs = require('fs');
+const path = require('path');
 const { isDev, isProd } = defineMode();
 
 module.exports = {
@@ -51,7 +53,7 @@ module.exports = {
     },
     devtool: isDev ? 'inline-source-map' : false,
     devServer: {
-        host: 'localhost',
+        host: LOCAL_IP_MACHINE,
         port: 3000,
         historyApiFallback: true,
         hot: isDev,

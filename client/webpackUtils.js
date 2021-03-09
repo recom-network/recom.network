@@ -1,5 +1,7 @@
 const path = require('path');
 
+const LOCAL_IP_MACHINE = require('os').networkInterfaces()?.Ethernet[1]?.address || 'localhost';
+
 const ROOT_DIR = path.resolve(__dirname, 'src');
 const DIST_DIR = path.resolve(__dirname, '..', 'dist', 'client');
 
@@ -24,7 +26,7 @@ const defineMode = () => ({
     isProd: process.env.NODE_ENV === 'production'
 });
 
-const defineFilename = (extension) => `[name].[hash].${extension}`;
+const defineFilename = (extension) => `[name].[fullhash].${extension}`;
 
 const optimization = isProduction => {
     const config = {
@@ -103,7 +105,8 @@ module.exports = {
         ROUTES_DIR,
         STORAGE_DIR,
         REACT_HOOKS_DIR,
-        UTILS_DIR
+        UTILS_DIR,
+        LOCAL_IP_MACHINE
     },
     methods: {
         defineMode,
