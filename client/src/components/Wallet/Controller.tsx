@@ -23,7 +23,7 @@ const WalletController: React.FC<Props> = (props: Props) => {
     }, [])
 
     return (
-        <div className='wallet-controller' onClick={openWalletConnector}>
+        <div className='wallet-controller' onClick={!accountAddress ? openWalletConnector : () => {}}>
             {
                 (accountAddress) ?
                     <>

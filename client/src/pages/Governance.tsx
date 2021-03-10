@@ -9,6 +9,7 @@ import CoinAccordion from '@components/Accordions/Coin';
 import { UserState } from '@/store/types/user';
 import { RootState } from '@/store/reducers';
 import { NoWalletConnect } from '@components/NoWalletConnect';
+import { WalletConnectorModal } from '@components/WalletConnectorModal';
 
 type Props = UserState & any;
 
@@ -19,6 +20,7 @@ const GovernanceComponent: React.FC<Props> = (props: Props) => {
 
     return (
         <main>
+            <WalletConnectorModal />
             <Navbar />
             <div className='content'>
                 <UserWarning />

@@ -1,6 +1,6 @@
 {
   "name": "recom.network",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "",
   "scripts": {
     "start": "npm run pi && npm run build:client && npm run build:clean && cross-env NODE_ENV=production node dist/app.js",
