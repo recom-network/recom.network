@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 
 import { UserState } from '@storage/types/user';
-import { requestConnectToMetaMaskWallet } from '@storage/actions/user';
+import { tryToGetAccountAddress } from '@storage/actions/user';
+import { openWalletConnector } from '@storage/actions/modals';
 import { RootState } from '@storage/reducers';
 
 const mapDispatch = {
-    requestConnectToMetaMaskWallet
+    openWalletConnector,
+    tryToGetAccountAddress
 }
 
 type Props = UserState & typeof mapDispatch;
@@ -14,14 +16,14 @@ type Props = UserState & typeof mapDispatch;
 const shortAccountAddress = (currentAccountAddress: string): string => (`${currentAccountAddress.substr(0, 6)}...${currentAccountAddress.substr(38)}`);
 
 const WalletController: React.FC<Props> = (props: Props) => {
-    const { requestConnectToMetaMaskWallet, accountAddress } = props;
+    const { accountAddress, openWalletConnector, tryToGetAccountAddress } = props;
 
     useEffect(() => {
-        requestConnectToMetaMaskWallet();
-    }, []);
+        tryToGetAccountAddress();
+    }, [])
 
     return (
-        <div className='wallet-controller' onClick={requestConnectToMetaMaskWallet.bind(null)}>
+        <div className='wallet-controller' onClick={openWalletConnector}>
             {
                 (accountAddress) ?
                     <>

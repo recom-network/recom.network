@@ -30,6 +30,14 @@ class WalletController {
             console.log('[WARNING]: Extension already found!')
         }
     }
+
+    async getAccountAddress() : Promise<string | null> {
+        try {
+            return (await WalletControllerInstance.signer.getAddress());
+        } catch {
+            throw new Error();
+        }
+    };
 }
 
 

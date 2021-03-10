@@ -1,0 +1,128 @@
+.modal-wallet-connector {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 10000;
+  @include flex(column, center, center);
+
+  &__backdrop {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+  }
+
+  &__separator {
+    width: 100%;
+    height: 1px;
+    background-color: #333;
+    margin: 10px 0 25px 0;
+  }
+
+  &__block {
+    width: 100%;
+    max-width: 440px;
+    background-color: $secondaryColor;
+    position: fixed;
+    z-index: 10001;
+    border-radius: 15px;
+
+    @media (max-width: 850px) {
+      width: 85% !important;
+    }
+  }
+
+  &__header {
+    width: 100%;
+    height: 70px;
+    @include flex(column, center, center);
+  }
+
+  &__title {
+    color: #FFF;
+    max-width: 65%;
+    text-align: center;
+    font: $modalWindowWCTitleText;
+
+    @media (max-width: 360px) {
+      font: $modalWindowWCTitleAdaptiveText;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: 0;
+    width: 60px;
+    height: 70px;
+    background-image: url('@assets/imgs/icons/close.svg');
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+
+    @media (max-width: 360px) {
+      width: 50px;
+      background-size: 14px 14px;
+    }
+  }
+  
+  &__body {
+    width: 100%;
+    height: 100%;
+    padding: 0 20px 20px 20px;
+    @include flex(column, flex-start, center);
+  }
+
+  &__hint {
+    font: $defaultContentFont;
+    margin: 0 0 15px 0;
+
+    @media (max-width: 360px) {
+      font: $defaultContentAdaptiveFont;
+    }
+  }
+
+  &__wallets {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+
+    @media (max-width: 400px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.wallet-item {
+  width: 100%;
+  height: 100px;
+  border: 1px solid rgba(255, 255, 255, .4);
+  border-radius: 15px;
+  cursor: pointer;
+  @include flex(column, center, center);
+
+  &:nth-child(2n + 1):last-child {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    @media (max-width: 400px) {
+      grid-column-start: unset;
+      grid-column-end: unset;
+    }
+  }
+
+  &__icon {
+    width: 46px;
+    height: 46px;
+    margin: 0 0 8px 0;
+  }
+
+  &__name {
+    font: $defaultContentFontBold;
+
+    @media (max-width: 360px) {
+      font: $defaultContentAdaptiveFontBold;
+    }
+  }
+}

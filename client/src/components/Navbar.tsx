@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { NavLink } from 'react-router-dom';
 
 import WalletController from '@components/Wallet/Controller';
+import { WalletConnectorModal } from '@components/WalletConnectorModal';
 
 export const Navbar: React.FC = () => {
 
