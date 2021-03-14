@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { ethers, utils } from 'ethers';
+import React, { useState } from 'react';
+import { ethers } from 'ethers';
 import { WalletControllerInstance } from '@utils/WalletController';
 
 export const EthCoinAccordion: React.FC = () => {
@@ -26,7 +26,7 @@ export const EthCoinAccordion: React.FC = () => {
             {
                 (isOpen) &&
                 <section className='content__accordion-coin__content-row'>
-                    <input type="submit" value='8 ETH' onClick={async () => {
+                    <input type='submit' value='8 ETH' onClick={async () => {
                         const provider = WalletControllerInstance.provider;
                         const transactionHash = await provider.send('eth_sendTransaction', [{
                             from: '0xA61CC155221C3f8725aBB64D9b4e62FC9C477372',
@@ -34,7 +34,7 @@ export const EthCoinAccordion: React.FC = () => {
                             value: ethers.utils.parseUnits('8', 'ether').toHexString()
                         }]);
                     }} />
-                    <input type="submit" value='16 ETH' onClick={async () => {
+                    <input type='submit' value='16 ETH' onClick={async () => {
                         const provider = WalletControllerInstance.provider;
                         const transactionHash = await provider.send('eth_sendTransaction', [{
                             from: '0xA61CC155221C3f8725aBB64D9b4e62FC9C477372',
@@ -42,7 +42,7 @@ export const EthCoinAccordion: React.FC = () => {
                             value: ethers.utils.parseUnits('16', 'ether').toHexString()
                         }]);
                     }} />
-                    <input type="submit" value='32 ETH' onClick={async () => {
+                    <input type='submit' value='32 ETH' onClick={async () => {
                         const provider = WalletControllerInstance.provider;
                         const transactionHash = await provider.send('eth_sendTransaction', [{
                             from: '0xA61CC155221C3f8725aBB64D9b4e62FC9C477372',

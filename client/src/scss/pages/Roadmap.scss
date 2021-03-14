@@ -1,0 +1,123 @@
+.roadmap-page {
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    height: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #DEDEDE;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #B2B2B2;
+    border-radius: 10px;
+  }
+
+  @include flex(row, center, flex-start);
+}
+
+.roadmap {
+  max-height: 350px;
+  @include flex(row, flex-start, center);
+
+  &__checkpoint {
+    color: #333;
+    font: $roadmapCheckpointText;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &__item {
+    width: 300px;
+    @include flex(column, null, null);
+
+    &:first-child {
+      margin: 0 0 0 80px;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__progress {
+    @include flex(row, center, flex-start);
+  }
+
+  &__indicator {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, .1);
+    border-radius: 50%;
+    margin: 15px 0;
+  }
+
+  &__done {
+    border: 5px solid #2AE448 !important;
+    background-image: url('@assets/imgs/icons/done.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 32px 16px;
+  }
+
+  &__line-to-next {
+    width: calc(100% - 50px);
+    height: 3px;
+    background-color: rgba(0, 0, 0, .1);
+
+    &--done {
+      background-color: #2AE448;
+    }
+  }
+
+  &__task {
+    max-width: 75%;
+    max-height: 200px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(51, 51, 51, 0.4);
+      border-radius: 10px;
+    }
+
+    p {
+      font: $defaultContentFontMedium;
+      color: #333;
+      padding: 10px;
+      text-align: justify;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    ul {
+      li {
+        font: $defaultContentFontMedium;
+        color: #333;
+        margin: 0 0 5px 0;
+
+        &:last-child {
+          margin: 0 !important;
+        }
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 7px;
+          height: 7px;
+          background-color: #333;
+          margin: 0 4px 0 0;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

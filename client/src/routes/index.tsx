@@ -13,6 +13,7 @@ import { Lending } from '@pages/Lending';
 import { StakeEthereum } from '@pages/StakeEthereum';
 import { Keep3rV1Job } from '@pages/Keep3rV1Job';
 import { Stats } from '@pages/Stats';
+import { Roadmap } from '@pages/Roadmap';
 
 const baseRoutes: React.FC = () => (
     <Switch>
@@ -27,6 +28,7 @@ const baseRoutes: React.FC = () => (
         <Route path='/stake-ethereum' exact component={StakeEthereum} />
         <Route path='/keep3rv1-job' exact component={Keep3rV1Job} />
         <Route path='/stats' exact component={Stats} />
+        <Route path='/roadmap' exact component={Roadmap} />
         <Redirect to='/' />
     </Switch>
 );

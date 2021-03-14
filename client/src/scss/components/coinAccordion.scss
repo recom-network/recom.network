@@ -12,6 +12,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 
     .content__accordion-coin__info {
       display: flex;
@@ -56,7 +57,6 @@
       align-items: center;
       border: 1px solid #FFF;
       border-radius: 10px;
-      cursor: pointer;
 
       img {
         width: 20px;
@@ -79,6 +79,10 @@
       font: $defaultContentFont;
       color: #FFF;
       margin: 0 0 10px 0;
+
+      &.second {
+        margin: 10px 0 10px 0 !important;
+      }
     }
 
     .content__accordion-coin__content__transaction {
@@ -100,5 +104,26 @@
     input {
       width: 32%;
     }
+  }
+}
+
+.input-with-max {
+  width: 49%;
+  background-color: #363747;
+  border-radius: 10px;
+  font: 14px 'Gilroy Medium';
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  input {
+    width: 100% !important;
+    background-color: transparent;
+  }
+
+  span {
+    padding: 10px 15px;
+    cursor: pointer;
   }
 }

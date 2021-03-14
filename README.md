@@ -6,7 +6,7 @@ This repository for beta version of "recom.newtwork" service. Here, we will add 
 ✔ "Trust wallet" is available on mobile phones
 
 ### v0.0.11-beta
-✔ MetaMask is available on mobile phones \
+✔ MetaMask available on mobile phones \
 ✔ Added component which remind you connect the wallet before you start
 
 ### v0.0.1-beta
